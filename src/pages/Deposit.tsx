@@ -135,7 +135,7 @@ const Deposit: FC = () => {
 
                     tx.add(program.transaction.deposit(
                         pdaVault[1],
-                        new anchor.BN(inputAmount * Math.pow(10, TOKEN_DIGITS)),
+                        TOKEN_DIGITS.muln(inputAmount),
                         {
                             accounts: {
                                 vaultAccount: pdaVault[0],

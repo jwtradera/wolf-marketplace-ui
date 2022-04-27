@@ -123,23 +123,24 @@ const Home: FC = () => {
                         ));
                     }
 
-                    tx.add(program.transaction.buy(
+                    let inputAmount = 10;
+
+                    tx.add(program.instruction.buy(
                         pdaVault[1],
                         pdaMarketplace[1],
                         pdaListing[1],
-                        new anchor.BN(LIST_PRICE * Math.pow(10, TOKEN_DIGITS)), {
+                        TOKEN_DIGITS.muln(inputAmount), {
                         accounts: {
                             vaultAccount: pdaVault[0],
                             marketplaceAccount: pdaMarketplace[0],
                             listingAccount: pdaListing[0],
+                            authority: publicKey,
+                            mint: mint,
                             nftVaultAccount: pdaNftAccount,
                             nftUserAccount: userNftAccount,
                             rewardUserAccount: userRewardAccount,
-                            mint: mint,
-                            authority: publicKey,
                             systemProgram: anchor.web3.SystemProgram.programId,
                             tokenProgram: TOKEN_PROGRAM_ID,
-                            rent: anchor.web3.SYSVAR_RENT_PUBKEY
                         }
                     }));
 

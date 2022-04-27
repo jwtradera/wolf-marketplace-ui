@@ -129,7 +129,7 @@ const Listing: FC = () => {
                     tx.add(program.transaction.addListing(
                         pdaMarketplace[1],
                         pdaListing[1],
-                        new anchor.BN(LIST_PRICE * Math.pow(10, TOKEN_DIGITS)), {
+                        TOKEN_DIGITS.muln(LIST_PRICE), {
                         accounts: {
                             marketplaceAccount: pdaMarketplace[0],
                             listingAccount: pdaListing[0],
@@ -138,8 +138,7 @@ const Listing: FC = () => {
                             mint: mint,
                             authority: publicKey,
                             systemProgram: anchor.web3.SystemProgram.programId,
-                            tokenProgram: TOKEN_PROGRAM_ID,
-                            rent: anchor.web3.SYSVAR_RENT_PUBKEY
+                            tokenProgram: TOKEN_PROGRAM_ID
                         }
                     }));
 

@@ -83,7 +83,7 @@ const Withdraw: FC = () => {
 
                     tx.add(program.transaction.withdraw(
                         pdaVault[1],
-                        new anchor.BN(inputAmount * Math.pow(10, TOKEN_DIGITS)),
+                        TOKEN_DIGITS.muln(inputAmount),
                         {
                             accounts: {
                                 vaultAccount: pdaVault[0],
