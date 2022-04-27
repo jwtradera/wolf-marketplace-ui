@@ -129,7 +129,7 @@ const Listing: FC = () => {
                     tx.add(program.transaction.addListing(
                         pdaMarketplace[1],
                         pdaListing[1],
-                        TOKEN_DIGITS.mul(new anchor.BN(LIST_PRICE)), {
+                        new anchor.BN(LIST_PRICE * Math.pow(10, TOKEN_DIGITS)), {
                         accounts: {
                             marketplaceAccount: pdaMarketplace[0],
                             listingAccount: pdaListing[0],

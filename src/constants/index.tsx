@@ -6,6 +6,6 @@ export const MARKETPLACE_PROGRAM_PUBKEY = new PublicKey("9BPEVBsqVkPVt79sBAjjQng
 export const METADATA_PUBKEY = new PublicKey("metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s");
 export const ADMIN_PUBKEY = new PublicKey("594WQxpBu4vVDhhW2K7QoNMZaN6j9znxajcZX13as7HD")
 
-export const TOKEN_DIGITS = new BN(1000000000);
-export const LIST_PRICE = 2;
+export const TOKEN_DIGITS = 9;
+export const LIST_PRICE = 10;
 

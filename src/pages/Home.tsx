@@ -127,7 +127,7 @@ const Home: FC = () => {
                         pdaVault[1],
                         pdaMarketplace[1],
                         pdaListing[1],
-                        TOKEN_DIGITS.mul(new anchor.BN(LIST_PRICE)), {
+                        new anchor.BN(LIST_PRICE * Math.pow(10, TOKEN_DIGITS)), {
                         accounts: {
                             vaultAccount: pdaVault[0],
                             marketplaceAccount: pdaMarketplace[0],
